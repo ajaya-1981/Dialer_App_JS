@@ -1,0 +1,58 @@
+{
+	"settings": [
+		{
+			"hostname": "junction.deltapath.com",
+			"username": "1800",
+			"password": "58701343",
+			"protocol": "https",
+			"actionTimeout": 60,
+			"reconnectInterval": 40,
+			"authmode": ""
+		},
+		{
+			"hostname": "junction.deltapath.com",
+			"username": "1801",
+			"password": "18674071",
+			"protocol": "https",
+			"actionTimeout": 60,
+			"reconnectInterval": 40,
+			"authmode": ""
+		},
+		{
+			"hostname": "junction.deltapath.com",
+			"username": "1802",
+			"password": "78066941",
+			"protocol": "https",
+			"actionTimeout": 60,
+			"reconnectInterval": 40,
+			"authmode": ""
+		},
+		{
+			"hostname": "junction.deltapath.com",
+			"username": "8000",
+			"password": "9ug5QtSN",
+			"protocol": "https",
+			"actionTimeout": 60,
+			"reconnectInterval": 40,
+			"authmode": ""
+		},
+		{
+			"hostname": "junction.deltapath.com",
+			"username": "8001",
+			"password": "UcH69psq",
+			"protocol": "https",
+			"actionTimeout": 60,
+			"reconnectInterval": 40,
+			"authmode": ""
+		},
+		{
+			"hostname": "junction.deltapath.com",
+			"username": "8002",
+			"password": "y6ZwERnD",
+			"protocol": "https",
+			"actionTimeout": 60,
+			"reconnectInterval": 40,
+			"authmode": ""
+		}
+	]
+}

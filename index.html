@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="access-control-allow-origin" content="*" />
+		<title>Delta Path Integration !</title>
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<link rel="stylesheet" type="text/css" href="modal.css" />
+		<link rel="shortcut icon" href="#" />
+		<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" />
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body onload="onload()">
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="config.json" type="text/javascript"></script>
+		<script src="common.js"></script>
+		<script src="script.js"></script>
+		<script src="deltapath.min.js"></script>
+		<script src="startWatch.js"></script>
+		<button id="myBtn" onclick="openModal('2000')">Open Modal</button>
+		<button id="myBtn2" onclick="openCallingModal('2000')">
+			Open Calling Modal
+		</button>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content modal-color-white">
+				<span class="close" onclick="closeModal('myModal')">&times;</span>
+				<h2 style="text-align: center">Incoming Call from</h2>
+				<h2 id="callerID" style="text-align: center">dummy</h2>
+				<div class="row">
+					<div>
+						<button
+							id="AcceptCall"
+							class="Button Accept fa fa-phone"
+							onclick="AcceptCall()"
+						></button>
+						<!-- <div style="text-align: center; margin-top: 50px">Accept</div> -->
+					</div>
+					<div>
+						<button
+							id="DeclineCall"
+							class="Button Reject fa fa-phone"
+							onclick="DeclineCall()"
+						></button>
+						<!-- <div style="text-align: center; margin-top: 50px">Decline</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="callingModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content modal-color-black">
+				<span class="close" onclick="closeModal('callingModal')">&times;</span>
+				<img src="img_avatar.png" alt="Avatar" class="avatar" />
+				<h2 id="callingName" style="text-align: center; color: white">
+					User Name
+				</h2>
+				<h4 id="connecting" style="text-align: center; color: white">
+					Connecting...
+				</h4>
+				<span id="countdown" class="timer" style="color: white"></span>
+				<div class="btnRow">
+					<button
+						id="btnPause"
+						class="fa fa-pause"
+						style="
+							color: white;
+							background: black;
+							font-size: xx-large;
+							border: 0px;
+						"
+					></button>
+					<button
+						id="btnCancelCall"
+						class="fa fa-phone rotated"
+						style="background-color: #f71f1f; font-size: xx-large; color: white"
+						onclick="btnCancelCall()"
+					></button>
+					<button
+						id="btnEndCall"
+						class="fa fa-phone rotated"
+						style="
+							color: white;
+							background: black;
+							font-size: xx-large;
+							border: 0px;
+						"
+					></button>
+				</div>
+
+				<!-- <div class="row" style="margin-top: 100px; margin-right: 75px">
+					<button
+						id="btnCancelCall"
+						class="Button Reject fa fa-phone"
+						onclick="btnCancelCall()"
+					></button>
+					
+				</div> -->
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div>
+					<label for="selectConfig">Choose User:</label>
+					<select name="selectConfig" class="select" id="selectConfig"></select>
+					<button
+						type="button"
+						class="fa fa-sign-in right"
+						onclick="signIn()"
+					></button>
+				</div>
+			</div>
+
+			<div id="user"></div>
+			<input id="output" type="tel" pattern="[0-9]{4}" maxlength="4" required />
+			<div class="line">
+				<div class="digit" id="one">1</div>
+				<div class="digit" id="two">
+					2
+					<div class="sub">ABC</div>
+				</div>
+				<div class="digit" id="three">
+					3
+					<div class="sub">DEF</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="digit" id="four">
+					4
+					<div class="sub">GHI</div>
+				</div>
+				<div class="digit" id="five">
+					5
+					<div class="sub">JKL</div>
+				</div>
+				<div class="digit">
+					6
+					<div class="sub">MNO</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="digit">
+					7
+					<div class="sub">PQRS</div>
+				</div>
+				<div class="digit">
+					8
+					<div class="sub">TUV</div>
+				</div>
+				<div class="digit">
+					9
+					<div class="sub">WXYZ</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="digit">*</div>
+				<div class="digit">0</div>
+				<div class="digit">#</div>
+			</div>
+
+			<div class="botrow">
+				<button
+					id="btnCall"
+					type="button"
+					class="fa fa-phone callBtn"
+					onclick="call()"
+				></button>
+				<!-- <i
+					class="fa fa-phone callBtn"
+					aria-disabled="true"
+					aria-hidden="true"
+				></i> -->
+				<!-- <div id="video">
+					<i class="fa fa-video-camera video" aria-hidden="true"></i>
+				</div> -->
+				<!-- <i class="fa fa-phone" aria-hidden="true"> -->
+				<!-- <div id="call"><i class="fa fa-phone" aria-hidden="true"></i></div> -->
+				<!-- <i class="fa fa-long-arrow-left dig" aria-hidden="true"></i> -->
+			</div>
+		</div>
+	</body>
+</html>
